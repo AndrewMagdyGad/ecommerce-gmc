@@ -1,0 +1,19 @@
+extends ./layout.pug
+block content   
+    div.d-flex.justify-content-center.flex-column.align-items-center
+        h2.m-3 Add New Product
+        form.w-50(action="/products/add", method="POST")
+            div.mb-3
+                label(for="title" class="form-label") Title
+                input(type="text" class="form-control" id="title" name="title")
+            div.d-flex.flex-row.justify-content-between.mb-3
+                div(style="width: 45%")
+                    label(for="price" class="form-label") Price
+                    input(type="number" class="form-control" id="price" name="price")
+                div(style="width: 45%")
+                    label(for="quantity" class="form-label") Quantity
+                    input(type="number" class="form-control" id="quantity" name="quantity")
+            div.mb-3
+                label(for="description" class="form-label") Description
+                textarea(name="description", cols="30", rows="5" class="form-control" id="description")
+            button(type="submit" class="btn btn-primary d-block m-auto") Add

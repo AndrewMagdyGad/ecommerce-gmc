@@ -1,0 +1,12 @@
+include layout.pug
+block content
+    h1 Welceome to Our App
+
+    each product in products 
+        div(class="card m-3", style="width: 18rem;")
+            img(src="https://via.placeholder.com/150", class="card-img-top", alt="product")
+            div(class="card-body")
+                h5(class="card-title") #{product.title}
+                p(class="card-text") #{product.description}
+                a(href="#" class="btn btn-primary") Go somewhere
+

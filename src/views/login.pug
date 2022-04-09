@@ -1,0 +1,14 @@
+extends ./layout.pug
+block content
+    div.d-flex.justify-content-center.flex-column.align-items-center
+        h2 Login
+        if error 
+            div.alert.alert-danger #{error.message}
+        form.w-50(method="POST", action="/users/login")
+            div.mb-3
+                label(for="email", class="form-label") Email 
+                input(type="text", class="form-control", id="email", name="email")
+            div.mb-3
+                label(for="password", class="form-label") Password 
+                input(type="password", class="form-control", id="password", name="password")
+            button(type="submit", class="btn btn-primary d-block my-5 mx-auto") Login
